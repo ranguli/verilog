@@ -7,7 +7,11 @@ Table of Contents:
 ## Finite State Machines: <a name="fsm"></a>
 
 ### Sequence Generator with Next State Function
-```
+**Exercise 1:** The `next_pattern` module provides the next state function for a sequence generator. The module outputs the next state given as the input the current state. In this example, an input of `0` would produce `1`, an input of `1` would produce `3`, and so on.
+
+Draw the state graph of the sequence. Write the state transition table, and derive the Boolean expressions from this table. Implement the `next_pattern` _with either gates or Boolean expressions._
+
+```verilog
 module next_pattern(output logic [1:0] next, input logic [1:0] cur);
     always_comb begin
         case(cur)
@@ -20,8 +24,8 @@ module next_pattern(output logic [1:0] next, input logic [1:0] cur);
 endmodule
 ```
 
-Run with the testbench:
-```
+Run with the professor's testbench:
+```verilog
 `timescale 1ns / 1ns
 module main;
     parameter N = 2;
@@ -55,3 +59,7 @@ t=00040 tst_vec=11 tst_result=10 expecting=10
 
 Test passed
 ```
+
+## 4 Variable K-maps With Behavioural Verilog
+
+![alt text](images/kmap1.png "Logo Title Text 1")
